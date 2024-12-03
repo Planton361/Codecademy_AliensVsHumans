@@ -9,13 +9,13 @@ public class TileMap {
     private PerlinNoise perlinNoise;
     private TileGenarator tileGenarator;
 
-    public TileMap(int rows, int cols) {
+    // Modified constructor to accept PerlinNoise and TileGenarator as parameters
+    public TileMap(int rows, int cols, PerlinNoise perlinNoise, TileGenarator tileGenarator) {
         this.rows = rows;
         this.cols = cols;
+        this.perlinNoise = perlinNoise;
+        this.tileGenarator = tileGenarator;
         map = new Tile[rows][cols];
-        this.tileGenarator = new TileGenarator();
-
-
     }
 
     public void generateMap() {
